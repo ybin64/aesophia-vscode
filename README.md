@@ -1,7 +1,5 @@
 # aesophia-vscode
 
-**NOTE:** A deployment test, not really useful yet.
-
 
 Visual Studio Code plugin for the [Sophia](https://github.com/aeternity/aesophia) language, used by the [Aeternity](https://aeternity.com/) blockchain. 
 
