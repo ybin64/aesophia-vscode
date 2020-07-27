@@ -1,0 +1,33 @@
+{
+	"name": "aesophia-vscode-client",
+	"description": "VSCode part of a Aeternity Sophia language server",
+	"author": "Nicklas Bystedt",
+	"license": "MIT",
+	"version": "0.0.1",
+	"publisher": "ybin64",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/ybin64/aesophia-vscode"
+	},
+	"engines": {
+		"vscode": "^1.43.0"
+	},
+
+    "scripts" : {
+        "vscode:prepublish": "webpack --mode production",
+        "webpack": "webpack --mode development",
+        "webpack-dev": "webpack --mode development --watch",
+        "test-compile": "tsc -p ./"
+    },
+
+	"dependencies": {
+		"vscode-languageclient": "^6.1.3"
+	},
+	"devDependencies": {
+		"@types/vscode": "1.43.0",
+		"ts-loader": "^8.0.1",
+		"vscode-test": "^1.3.0",
+		"webpack": "^4.44.0",
+		"webpack-cli": "^3.3.12"
+	}
+}

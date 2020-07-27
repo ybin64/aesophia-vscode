@@ -1,0 +1,32 @@
+{
+	"name": "aesophia-vscode-server",
+	"description": "Aeternity Sophia language server in node.",
+	"version": "0.0.1",
+	"author": "Nicklas Bystedt",
+	"publisher": "ybin64",
+	"license": "MIT",
+	"engines": {
+		"node": "*"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/ybin64/aesophia-vscode"
+	},
+	"scripts": {
+        "vscode:prepublish": "webpack --mode production",
+        "webpack": "webpack --mode development",
+        "webpack-dev": "webpack --mode development --watch",
+        "test-compile": "tsc -p ./"
+    },
+	"dependencies": {
+		"aesophia-parser": "0.0.2",
+		"vscode-languageserver": "^6.1.1",
+		"vscode-languageserver-textdocument": "^1.0.1"
+	},
+	"devDependencies": {
+		"immutable": "^4.0.0-rc.12",
+		"ts-loader": "^8.0.1",
+		"webpack": "^4.44.0",
+		"webpack-cli": "^3.3.12"
+	}
+}

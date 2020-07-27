@@ -1,0 +1,89 @@
+{
+	"name": "aesophia-vscode",
+	"description": "A language server for the Aeternity Sophia langage",
+	"author": "Nicklas Bystedt",
+	"license": "MIT",
+	"version": "0.1.0",
+	"icon": "images/aeternity-icon.png",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/ybin64/aesophia-vscode"
+	},
+	"publisher": "ybin64",
+	"categories": [],
+	"keywords": [
+		"aeternity",
+		"aesophia",
+		"sophia"
+	],
+	"engines": {
+		"vscode": "^1.43.0"
+	},
+	"activationEvents": [
+		"onLanguage:plaintext"
+	],
+	"main": "./client/out/extension",
+	"contributes": {
+		"languages": [
+			{
+				"id": "aesophia",
+				"aliases": [
+					"Sophia",
+					"sophia"
+				],
+				"extensions": [
+					".aes"
+				],
+				"configuration": "./client/aesophia.configuration.json"
+			}
+		],
+		"grammars": [
+			{
+				"language": "aesophia",
+				"scopeName": "source.aesophia",
+				"path": "./client/syntaxes/aesophia.json"
+			}
+		],
+		"configuration": {
+			"type": "object",
+			"title": "Aesophia configuration",
+			"properties": {
+				"aesophia.maxNumberOfProblems": {
+					"scope": "resource",
+					"type": "number",
+					"default": 100,
+					"description": "Controls the maximum number of problems produced by the server."
+				},
+				"aesophia.trace.server": {
+					"scope": "window",
+					"type": "string",
+					"enum": [
+						"off",
+						"messages",
+						"verbose"
+					],
+					"default": "off",
+					"description": "Traces the communication between VS Code and the language server."
+				}
+			}
+		}
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile:release",
+		"compile:release": "make clean-build && make -C client build-release && make -C server build-release",
+		"compile": "tsc -b",
+		"watch": "tsc -b -w",
+		"postinstall": "cd client && npm install && cd ../server && npm install && cd ..",
+		"test": "sh ./scripts/e2e.sh"
+	},
+	"dependencies": {},
+	"devDependencies": {
+		"@types/mocha": "^5.2.7",
+		"@types/node": "^12.12.0",
+		"@typescript-eslint/parser": "^2.3.0",
+		"eslint": "^6.4.0",
+		"mocha": "^6.2.2",
+		"typescript": "^3.9.4",
+		"vsce": "^1.77.0"
+	}
+}

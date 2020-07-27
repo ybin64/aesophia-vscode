@@ -1,0 +1,13 @@
+*.sw[a-z]
+*dont-checkin*
+*.gifcask
+*.original
+*.vsix
+.DS_Store
+
+# vscode-extension-samples/lsp-sample/.gitignore
+out
+node_modules
+client/server
+.vscode-test
+
