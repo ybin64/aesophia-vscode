@@ -5,6 +5,13 @@ build-vsix: clean-build
 	rm *.vsix
 	$(VSCE_BIN) package
 
+#
+# You will be asked for the personal access token
+#
+.PHONY:publish-to-marketplace
+publish-to-marketplace:
+	$(VSCE_BIN) publish
+
 .PHONY:clean-build
 clean-build:
 	make -C client clean-build
